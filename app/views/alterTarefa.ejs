@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="utf-8" />
+	<title>ADD Tarefa</title>
+</head>
+
+<body style="text-align: center;">
+	<h1>Adicionar Tarefa</h1>
+	<form action="/alterar/salvar" method="get">
+        <section>
+            <% if(errors){ %>
+                <ul>
+                    <% for (let i=0; i < errors.length; i++ ){%>
+                        <li>
+                            <%=errors[i].msg%>
+                        </li>
+                    <%}%>
+                </ul>
+            <% } %>
+        </section>
+
+		<input type="text" value="<% tarefa.descricao %>" name="descricao" placeholder="Descricao" >
+		<input type="number" value="<% tarefa.id_usuario %>" name="id_usuario" placeholder="ID Usuario" >
+		<input type="text" value="<% tarefa.data_entrega %>" name="data_entrega" placeholder="Data Entrega">
+		<input type="submit" value="enviar">
+	</form>
+
+</body>
+
+</html>

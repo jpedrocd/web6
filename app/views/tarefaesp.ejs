@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="utf-8" />
+	<title>Pesquisar</title>
+</head>
+
+<body style="text-align: center;">
+	<h1>Pesquisar Tarefa por Usuário</h1>
+	<form action="/tarefaesp?id=<%usuario.id%>" method="get">
+		<input type="number" value="<% usuario.id %>"  name="id" placeholder="ID" >
+		<input type="submit" value="Pesquisar">
+
+	</form>
+    <div>
+        <% for (let i=0; i < tarefas?.length; i++){ %>
+            <div style="border-bottom: solid 1px; margin: 0px 300px 15px 300px;" class="card">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        Descrição: <%= tarefas[i].descricao %>
+                
+                    </h5>
+                    
+                    <p class="card-text">
+                        Data Entrega: <%= tarefas[i].data_entrega %>
+                    </p>
+
+                </div>
+            </div>
+            <% } %>
+            <div style="margin-bottom: 20px; margin-top: 20px;"  class="card">
+                <a href="/"><button>MENU</button></a>
+            </div>
+
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<htm lang="pt">
+    <head>
+        <meta charset="utf-8" />
+        <title>Tarefas</title>
+    </head>
+    <body style="text-align: center;">
+        <h1 style="border-bottom: solid 1px;">TAREFAS</h1>
+        <div>
+            <% for (let i=0; i < tarefas.length; i++){ %>
+                <div style="border-bottom: solid 1px; margin: 0px 300px 15px 300px;" class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            Descrição: <%= tarefas[i].descricao %>
+                    
+                        </h5>
+                        <p class="card-text">
+                            Usuário Responsável: <%= tarefas[i].id_usuario %>
+                        </p>
+
+                        <p class="card-text">
+                            Data Entrega: <%= tarefas[i].data_entrega %>
+                        </p>
+                    </div>
+                    <a href="/alterar?id=<%= tarefas[i].id_usuario %>"><button style="margin-bottom: 15px;">Alterar</button></a>
+                </div>
+                <% } %>
+            </div>
+            <div style="margin-bottom: 20px; margin-top: 20px;"  class="card">
+            <a href="/"><button>MENU</button></a>
+        </div>
+    </body>
+</htm>
